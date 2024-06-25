@@ -1,0 +1,129 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.App {
+  text-align: center;
+  background-color: #e1dfdf;
+  padding: 20px;
+}
+
+.title-container {
+  background-color: #807979; 
+  padding: 30px 0; 
+  text-align: left;
+  border-radius: 5px;
+  margin-bottom: 20px; 
+}
+.task-title{
+  font-size: 20px;
+  color: #070116;
+}
+
+
+.app-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0; 
+  color: #070116; 
+}
+.list-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0; 
+  color: #070116; 
+  text-align: center;
+}
+
+.task-form {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #807979;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-form input[type="text"],
+.task-form textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.task-form button {
+  background-color: #664caf;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.task-form button:hover {
+  background-color: #45a049;
+}
+.task-form button:hover {
+  background-color: #45a049;
+}
+.task-list {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.task-table th,
+.task-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.task-table th {
+  background-color: #807979;
+  color: #070116;
+}
+
+.task-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.task-actions button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.success-message {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.error-message {
+  background-color: #F44336;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 10px 0;
+  text-align: center;
+}
