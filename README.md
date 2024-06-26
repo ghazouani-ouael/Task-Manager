@@ -12,7 +12,7 @@ User Interface: Intuitive and user-friendly interface.
 #Technologies Used
 Frontend: React.js, Bootstrap
 Backend: Spring Boot
-Database: H2 Database (for demonstration purposes)
+Database: H2 Database
 
 #Prerequisites
 Node.js
