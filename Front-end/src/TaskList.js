@@ -9,6 +9,7 @@ const TaskList = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [selectedTask, setSelectedTask] = useState(null);
+  const [darkMode, setDarkMode] = useState(false); 
 
   useEffect(() => {
     fetchTasks();
@@ -103,23 +104,56 @@ const TaskList = () => {
     setSelectedTask(null);
   };
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode); 
+  };
+
   return (
-    <div className="container-fluid">
+    <div className={`container-fluid ${darkMode ? 'dark-mode' : ''}`}>
       <div className="row">
         {/* Top Sidebar */}
-        <div className="col-12 text-light py-3 fixed-top" style={{ backgroundColor: '#5e2f95' }}>
-          <h2 className="text-left">
-            <i className="bi bi-list-task"></i> Task Manager
-          </h2>
+        <div className="col-12 text-light py-3 fixed-top" style={{ backgroundColor: darkMode ? '#333' : '#5e2f95' }}>
+          <div className="d-flex justify-content-between align-items-center">
+            <h2 className="text-left">
+              <i className="bi bi-list-task"></i> Task Manager
+            </h2>
+            <div className="d-flex ml-auto align-items-center"> 
+              <div className="social-icons">
+                <a href="#" className="social-icon text-white mr-2"><i className="bi bi-facebook"></i></a>
+                <a href="#" className="social-icon text-white mr-2"><i className="bi bi-twitter"></i></a>
+                <a href="#" className="social-icon text-white mr-2"><i className="bi bi-instagram"></i></a>
+              </div>
+            
+              <button className="btn btn-link text-light" onClick={toggleDarkMode}>
+                {darkMode ? '' : ''} <i className={`bi ${darkMode ? 'bi-sun-fill' : 'bi-moon-fill'}`}></i>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="row">
         {/* Left Sidebar */}
-        <div className="col-1 text-light py-3 fixed-left" style={{ backgroundColor: '#5e2f95' }}>
+        <div className="col-2 text-light py-3 fixed-left" style={{ backgroundColor: darkMode ? '#333' : '#5e2f95' }}>
+          <br></br>
+          <h5>Menu</h5>
+          <br></br>
+          <br></br>
+          <br></br>
+          <ul className="list-unstyled">
+            <li>
+              <button className="btn btn-link text-light" >Dashboard</button>
+            </li>
+            <li>
+              <button className="btn btn-link text-light">Profile</button>
+            </li>
+            <li>
+              <button className="btn btn-link text-light" >Settings</button>
+            </li>
+          </ul>
         </div>
 
-        {/* Main Content Area */}
+        
         <div className="col-9 offset-2">
           <div className="card mb-3">
             <div className="card-body">
