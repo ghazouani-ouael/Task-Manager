@@ -107,15 +107,16 @@ const TaskList = () => {
     <div className="container-fluid">
       <div className="row">
         {/* Top Sidebar */}
-        <div className="col-12  text-light py-3 fixed-top" style={{ backgroundColor: '#5e2f95' }}>
-          <h2 className="text-left">Task Manager</h2>
+        <div className="col-12 text-light py-3 fixed-top" style={{ backgroundColor: '#5e2f95' }}>
+          <h2 className="text-left">
+            <i className="bi bi-list-task"></i> Task Manager
+          </h2>
         </div>
       </div>
 
       <div className="row">
         {/* Left Sidebar */}
-        <div  className="col-1  text-light py-3 fixed-left"  style={{ backgroundColor: '#5e2f95' }} >
-    
+        <div className="col-1 text-light py-3 fixed-left" style={{ backgroundColor: '#5e2f95' }}>
         </div>
 
         {/* Main Content Area */}
