@@ -23,40 +23,46 @@ const Task = ({ task, onDelete, onCompleteToggle, onEdit, onUpdate, isEditing })
   };
 
   return (
-    <tr>
-      <td>
+    <div className="card mb-3">
+      <div className="card-body">
         {isEditing ? (
-          <input type="text" value={editedTitle} onChange={(e) => setEditedTitle(e.target.value)} />
-        ) : (
-          title
-        )}
-      </td>
-      <td>
-        {isEditing ? (
-          <textarea value={editedDescription} onChange={(e) => setEditedDescription(e.target.value)} />
-        ) : (
-          description
-        )}
-      </td>
-      <td>{completed ? (
-          <span className="badge badge-success">Complete</span>
-        ) : (
-          <span className="badge badge-danger">Incomplete</span>
-        )}</td>
-      <td>
-        {isEditing ? (
-          <button onClick={handleSave} type="button" class="btn btn-outline-success">Save</button>
+          <>
+            <input
+              type="text"
+              className="form-control mb-2"
+              value={editedTitle}
+              onChange={(e) => setEditedTitle(e.target.value)}
+            />
+            <textarea
+              className="form-control mb-2"
+              value={editedDescription}
+              onChange={(e) => setEditedDescription(e.target.value)}
+            />
+          </>
         ) : (
           <>
-            <button type="button" class="btn btn-outline-warning" onClick={handleComplete}>
-              {completed ? 'Not Completed' : 'Completed'}
-            </button>
-            <button type="button" class="btn btn-outline-info" onClick={() => onEdit(id)}>Edit</button>
-            <button type="button" class="btn btn-outline-danger" onClick={handleDelete}>Delete</button>
+            <h5 className="card-title">{title}</h5>
+            <p className="card-text mb-2">{description}</p>
+            <span className={`badge ${completed ? 'badge-success' : 'badge-danger'}`}>
+              {completed ? 'Complete' : 'Incomplete'}
+            </span>
           </>
         )}
-      </td>
-    </tr>
+        <div className="task-actions">
+          {isEditing ? (
+            <button className="btn btn-success mr-2" onClick={handleSave}>Save</button>
+          ) : (
+            <>
+           <button className="btn btn-outline-warning btn-sm mr-2" onClick={handleComplete}>
+                {completed ? 'Mark as Incomplete' : 'Mark as Completed'}
+              </button>
+              <button className="btn btn-outline-primary btn-sm mr-2" onClick={() => onEdit(id)}>Edit</button>
+              <button type="button" class="btn btn-outline-danger btn-sm mr-2" onClick={handleDelete}>Delete</button>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -7,7 +7,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="title-container">
-          <h1 className="app-title">Task Manager</h1>
+              <div className="container-fluid">
+      <div className="row">
+        {/* Top Sidebar */}
+        <div className="col-12 bg-primary text-light py-3 fixed-top">
+          <h2 className="text-center">Task Manager</h2>
+        </div>
+      </div>
+      </div>
         </div>
       </header>
       <main className="main-content">
@@ -17,8 +24,8 @@ function App() {
       </main>
       <footer className="footer">
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} Task Manager App. All rights reserved.</p>
         </div>
+        
       </footer>
     </div>
   );
