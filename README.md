@@ -22,6 +22,7 @@ Maven
 #Backend Setup
 mvn spring-boot:run
 The backend server will start running at http://localhost:8080.
+To Secure my application i configured CORS, which helps in securing my application by specifying which origins (domains) are allowed to access my API and what HTTP methods and headers are allowed. This is important for preventing unauthorized cross-origin requests.
 
 #Frontend Setup
 
