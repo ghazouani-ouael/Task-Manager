@@ -43,21 +43,41 @@ const Task = ({ task, onDelete, onCompleteToggle, onEdit, onUpdate, isEditing })
           <>
             <h5 className="card-title">{title}</h5>
             <p className="card-text mb-2">{description}</p>
-            <span className={`badge ${completed ? 'badge-success' : 'badge-danger'}`}>
-              {completed ? 'Complete' : 'Incomplete'}
-            </span>
+            <div className="completion-icon">
+              <span className={`badge ${completed ? 'badge-success' : 'badge-danger'}`}>
+                {completed ? 'Complete' : 'Incomplete'}
+              </span>
+            </div>
           </>
         )}
         <div className="task-actions">
           {isEditing ? (
-            <button className="btn btn-success mr-2" onClick={handleSave}>Save</button>
+            <i
+              className="bi bi-check-circle text-success mr-2"
+              style={{ cursor: 'pointer' }}
+              onClick={handleSave}
+              title="Save"
+            ></i>
           ) : (
             <>
-           <button className="btn btn-outline-warning btn-sm mr-2" onClick={handleComplete}>
-                {completed ? 'Mark as Incomplete' : 'Mark as Completed'}
-              </button>
-              <button className="btn btn-outline-primary btn-sm mr-2" onClick={() => onEdit(id)}>Edit</button>
-              <button type="button" class="btn btn-outline-danger btn-sm mr-2" onClick={handleDelete}>Delete</button>
+              <i
+                className={`bi ${completed ? 'bi-arrow-counterclockwise text-warning' : 'bi-check-circle text-success'} mr-2`}
+                style={{ cursor: 'pointer' }}
+                onClick={handleComplete}
+                title={completed ? 'Mark as Incomplete' : 'Mark as Complete'}
+              ></i>
+              <i
+                className="bi bi-pencil text-primary mr-2"
+                style={{ cursor: 'pointer' }}
+                onClick={() => onEdit(id)}
+                title="Edit"
+              ></i>
+              <i
+                className="bi bi-trash text-danger"
+                style={{ cursor: 'pointer' }}
+                onClick={handleDelete}
+                title="Delete"
+              ></i>
             </>
           )}
         </div>

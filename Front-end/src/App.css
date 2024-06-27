@@ -236,3 +236,6 @@ body {
   width: 200px; 
   padding-right: 15px; 
 }
+.logout-btn {
+  margin-bottom: 30px; 
+}
