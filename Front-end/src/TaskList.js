@@ -9,7 +9,6 @@ const TaskList = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [selectedTask, setSelectedTask] = useState(null);
-  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     fetchTasks();
@@ -104,12 +103,9 @@ const TaskList = () => {
     setSelectedTask(null);
   };
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
 
   return (
-    <div className={`container-fluid ${darkMode ? 'dark-mode' : ''}`}>
+    <div className= "container-fluid" >
       <div className="row">
         {/* Top Sidebar */}
         <div className="col-12 text-light py-3 fixed-top" style={{ backgroundColor: '#5e2f95' }}>
@@ -130,7 +126,7 @@ const TaskList = () => {
 
       <div className="row">
         {/* Left Sidebar */}
-        <div className="col-2 text-light py-3 fixed-left d-flex flex-column align-items-center" style={{ backgroundColor: darkMode ? '#333' : '#5e2f95', height: '100vh' }}>
+        <div className="col-2 text-light py-3 fixed-left d-flex flex-column align-items-center" style={{ backgroundColor: '#5e2f95' }}>
         <img src="/icon.png" alt="icon" style={{ width: '100%', maxWidth: '100px', marginBottom: '20px' }} />
         <p style={{ textAlign: 'center', fontSize: '16px', marginTop: '-30px' }}>Manager Breach</p>        
         <ul className="list-unstyled flex-grow-1 d-flex flex-column justify-content-center">
